@@ -1,3 +1,5 @@
+[![Gitpod ready-to-code](https://img.shields.io/badge/Gitpod-ready--to--code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/ila-embsys/ada-project-example)
+
 # Zephyr RTOS based ADA application project example
 
 The project is a proof of concept that Ada can run over Zephyr RTOS as a user application.
