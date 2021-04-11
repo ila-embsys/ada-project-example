@@ -1,0 +1,5 @@
+{
+    "unwantedRecommendations": [
+        "ms-vscode.cpptools" // clangd is used to provide c/c++ support
+    ]
+}

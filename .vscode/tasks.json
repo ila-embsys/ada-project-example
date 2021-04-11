@@ -1,0 +1,101 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Launch Renode and connect UART",
+            "type": "shell",
+            "dependsOn": [
+                "Launch Renode",
+                "Show Renode UART"
+            ]
+        },
+        {
+            "label": "Kill Renode",
+            "type": "process",
+            "command": "pkill",
+            "args": [
+                "-F",
+                "/tmp/renode_instance.pid",
+                "--signal",
+                "2"
+            ]
+        },
+        {
+            "label": "Launch Renode",
+            "isBackground": true,
+            "type": "process",
+            "command": "${workspaceRoot}/utils/launch_renode.sh",
+            "presentation": {
+                "reveal": "always"
+            },
+            // "problemMatcher": [
+            //     {
+            //         "pattern": [
+            //             {
+            //                 "regexp": ".",
+            //                 "file": 1,
+            //                 "location": 2,
+            //                 "message": 3
+            //             }
+            //         ],
+            //         "background": {
+            //             "beginsPattern": ".",
+            //             "endsPattern": "."
+            //         }
+            //     }
+            // ]
+        },
+        {
+            "label": "Show Renode UART",
+            "isBackground": true,
+            "type": "process",
+            "command": "${workspaceRoot}/utils/renode_uart.sh",
+            "presentation": {
+                "reveal": "always"
+            },
+            // "problemMatcher": [
+            //     {
+            //         "pattern": [
+            //             {
+            //                 "regexp": ".",
+            //                 "file": 1,
+            //                 "location": 2,
+            //                 "message": 3
+            //             }
+            //         ],
+            //         "background": {
+            //             "beginsPattern": ".",
+            //             "endsPattern": "."
+            //         }
+            //     }
+            // ]
+        },
+        {
+            "label": "Telnet RTT",
+            "isBackground": true,
+            "type": "process",
+            "command": "${workspaceRoot}/utils/rtt_telnet.sh",
+            "presentation": {
+                "reveal": "always"
+            },
+            // "problemMatcher": [
+            //     {
+            //         "pattern": [
+            //             {
+            //                 "regexp": ".",
+            //                 "file": 1,
+            //                 "location": 2,
+            //                 "message": 3
+            //             }
+            //         ],
+            //         "background": {
+            //             "beginsPattern": ".",
+            //             "endsPattern": "."
+            //         }
+            //     }
+            // ]
+        }
+    ]
+}

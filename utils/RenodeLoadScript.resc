@@ -1,0 +1,28 @@
+using sysbus
+
+mach create
+machine LoadPlatformDescription @platforms/cpus/stm32f429.repl
+
+logLevel 1 sysbus.uart1
+emulation CreateUartPtyTerminal "term" "/tmp/renode_uart" True
+connector Connect sysbus.uart1 term
+
+$bin?=@build/zephyr/zephyr.elf
+
+# logFile @/tmp/renode_log_${RUNTEST}.txt
+
+macro reset
+"""
+    sysbus LoadELF $bin
+"""
+
+runMacro $reset
+
+#emulation RunFor @1
+
+machine StartGdbServer 3333
+
+#sysbus.cpu ExecutionMode SingleStep
+start
+
+#quit

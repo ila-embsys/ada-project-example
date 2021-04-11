@@ -1,0 +1,15 @@
+&usart1 {
+	status = "okay";
+};
+
+&usart2 {
+	status = "disabled";
+};
+
+&i2c3 {
+	status = "disabled";
+};
+
+&spi5 {
+	status = "disabled";
+};

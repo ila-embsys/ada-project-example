@@ -1,0 +1,85 @@
+---
+# Required version of clang-format: >9.0.0
+
+# Targeted language
+Language: Cpp
+
+BasedOnStyle: Mozilla
+
+# The number of columns to use for indentation.
+IndentWidth: "4"
+
+ColumnLimit: "80"
+AccessModifierOffset: "-3"
+
+AlignConsecutiveAssignments: "false"
+AlignConsecutiveDeclarations: "false"
+AlignOperands: "true"
+AlignTrailingComments: "true"
+AllowShortBlocksOnASingleLine: "true"
+AllowShortCaseLabelsOnASingleLine: "false"
+AllowShortFunctionsOnASingleLine: Inline
+AllowShortIfStatementsOnASingleLine: "false"
+AlwaysBreakTemplateDeclarations: "true"
+BinPackArguments: "true"
+BinPackParameters: "false"
+AlwaysBreakAfterDefinitionReturnType: None
+AlwaysBreakAfterReturnType: None
+AllowShortLoopsOnASingleLine: "false"
+BreakBeforeInheritanceComma: "false"
+
+ConstructorInitializerAllOnOneLineOrOnePerLine: "true"
+AllowAllParametersOfDeclarationOnNextLine: "true"
+AllowAllArgumentsOnNextLine: "true"
+ExperimentalAutoDetectBinPacking: "false"
+IndentCaseLabels: "true"
+BreakBeforeBinaryOperators: None
+
+NamespaceIndentation: None
+
+SpaceAfterCStyleCast: "false"
+SpaceBeforeParens: ControlStatements
+SpaceInEmptyParentheses: "false"
+SpacesBeforeTrailingComments: "2"
+SpacesInAngles: "false"
+Standard: Auto
+TabWidth: "4"
+UseTab: Never
+BreakConstructorInitializers: AfterColon
+BreakInheritanceList: BeforeComma
+
+Cpp11BracedListStyle: "true"
+FixNamespaceComments: "true"
+
+# Align parameters on the open bracket
+AlignAfterOpenBracket: Align
+
+# Configure each individual brace in BraceWrapping
+BreakBeforeBraces: "Custom"
+
+# Control of individual brace wrapping cases
+BraceWrapping:
+  {
+    AfterClass: "true",
+    AfterControlStatement: "false",
+    AfterEnum: "true",
+    AfterFunction: "true",
+    AfterNamespace: "false",
+    AfterStruct: "true",
+    AfterUnion: "true",
+    BeforeCatch: "false",
+    BeforeElse: "true",
+    IndentBraces: "false",
+  }
+
+PenaltyBreakComment: 1
+PenaltyBreakAssignment: 2
+
+IndentWrappedFunctionNames: "false"
+
+KeepEmptyLinesAtTheStartOfBlocks: "true"
+
+MaxEmptyLinesToKeep: 2
+
+# Pointer is aligned to left side
+PointerAlignment: Left

@@ -1,0 +1,7 @@
+{
+    "kconfig.zephyr.board": {
+        "board": "stm32f429i_disc1",
+        "arch": "arm",
+        "dir": "/workspaces/ada-project-example/zephyr/boards/arm/stm32f429i_disc1"
+    }
+}

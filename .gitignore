@@ -1,0 +1,6 @@
+build/
+
+# Submodules
+/zephyr
+/app/cmake
+/modules

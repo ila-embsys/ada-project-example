@@ -1,0 +1,6 @@
+./*
+!c_cpp_properties.json
+!launch.json
+
+.cortex-debug.registers.state.json
+.cortex-debug.peripherals.state.json

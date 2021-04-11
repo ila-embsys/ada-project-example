@@ -1,0 +1,9 @@
+[manifest]
+path = app
+
+[zephyr]
+base = zephyr
+base-prefer = configfile
+
+[build]
+cmake-args = -DCMAKE_EXPORT_COMPILE_COMMANDS=ON
