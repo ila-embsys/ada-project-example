@@ -18,7 +18,7 @@ app:
         # EXTRA_CFLAGS: -fdump-ada-spec # -H
       env:
         ADA: arm-zephyr-eabi-gcc
-        ADAFLAGS: --RTS=/workspaces/ada-project-example/modules/gnat -I/workspaces/ada-project-example/build -gnat12
+        ADAFLAGS: --RTS=${workspaceFolder}/modules/gnat -I${workspaceFolder}/build -gnat12
         CC: arm-zephyr-eabi-g++
 
     app-rtt:
@@ -37,5 +37,5 @@ app:
         # EXTRA_CFLAGS: -fdump-ada-spec # -H
       env:
         ADA: arm-zephyr-eabi-gcc
-        ADAFLAGS: --RTS=/workspaces/ada-project-example/modules/gnat -I/workspaces/ada-project-example/build -gnat12
+        ADAFLAGS: --RTS=${workspaceFolder}/modules/gnat -I${workspaceFolder}/build -gnat12
         CC: arm-zephyr-eabi-g++
