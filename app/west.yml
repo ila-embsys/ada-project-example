@@ -11,6 +11,11 @@ manifest:
 
   # Please add items below based on alphabetical order
   projects:
+    - name: Zephyr-CMake-Helpers
+      remote: thirdpin
+      revision: 68be03cf1583f8e4d0245e008064681abd846fb4
+      path: modules/zephyr-cmake-helpers
+
     - name: cmsis
       remote: upstream
       revision: 542b2296e6d515b265e25c6b7208e8fea3014f90

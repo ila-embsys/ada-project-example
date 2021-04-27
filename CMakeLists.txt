@@ -4,7 +4,7 @@ set(APPLICATION_SOURCE_DIR "${CMAKE_CURRENT_SOURCE_DIR}/app")
 
 # Set correct ZEPHYR_BASE var if we call
 # CMake directly without west meta-tool
-include(${APPLICATION_SOURCE_DIR}/cmake/zephyr_loc.cmake)
+include(${CMAKE_CURRENT_SOURCE_DIR}/modules/zephyr-cmake-helpers/zephyr_loc.cmake)
 extract_zephyr_base_loc("${CMAKE_SOURCE_DIR}/.west/config")
 # Force correct Zephyr path
 set(ENV{ZEPHYR_BASE} ${ZEPHYR_BASE_LOC})
@@ -15,7 +15,7 @@ unset(CMAKE_BUILD_TYPE CACHE)
 message(STATUS "CMAKE_BUILD_TYPE was reset. Zephyr will care about it.")
 
 # Zephyr initialization
-include(${APPLICATION_SOURCE_DIR}/cmake/zephyr.cmake)
+include(${CMAKE_CURRENT_SOURCE_DIR}/modules/zephyr-cmake-helpers/zephyr.cmake)
 
 # Define the top-level project because CMake
 # wants it in the top-level CMakeLists.txt
