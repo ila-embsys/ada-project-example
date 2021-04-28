@@ -36,6 +36,7 @@ build:
 init-repo:
 	west update
 	# git apply ./patches/zephyr/* --directory=zephyr
+	chmod +x ./utils/*.sh
 
 .PHONY: reinit-repo
 reinit-repo:
