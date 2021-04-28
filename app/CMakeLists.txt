@@ -4,7 +4,7 @@ cmake_minimum_required(VERSION 3.15)
 # we should not make Zephyr init again
 if (CMAKE_SOURCE_DIR STREQUAL CMAKE_CURRENT_SOURCE_DIR)
     # Zephyr initialization
-    include(cmake/zephyr.cmake)
+    include(${CMAKE_CURRENT_SOURCE_DIR}/../modules/zephyr-cmake-helpers/zephyr.cmake)
 endif()
 
 # Application project
