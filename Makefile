@@ -10,7 +10,7 @@ endif
 
 PLATFORM_SPECIFIC_LOCS_ARG=-DKCONFIG_ROOT=KConfig -DOUT_OF_TREE_BOARD=OFF -DOUT_OF_TREE_SOC=OFF -DOUT_OF_TREE_DTS=OFF
 CONF_FILE ?= prj_uart_shell.conf
-EXTRA_CFLAGS := -fdump-ada-spec
+# EXTRA_CFLAGS := -fdump-ada-spec
 
 mkfile_path := $(abspath $(lastword $(MAKEFILE_LIST)))
 current_dir := $(patsubst %/,%,$(dir $(mkfile_path)))
