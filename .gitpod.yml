@@ -3,7 +3,7 @@ image:
   file: .gitpod.Dockerfile
 
 tasks:
-  - init: cmake .
+  - init: make init-repo
 
 vscode:
   extensions:
