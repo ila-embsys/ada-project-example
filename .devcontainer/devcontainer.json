@@ -18,15 +18,6 @@
 	],
     "settings": {
         "terminal.integrated.shell.linux": "/bin/bash",
-        "clangd.arguments": [
-            "--compile-commands-dir=build",
-            "-j=12",
-            "--cross-file-rename",
-            "--clang-tidy",
-            "--background-index",
-            "--query-driver=/opt/zephyr-sdk/arm-zephyr-eabi/bin/arm-zephyr-eabi-*",
-            "--pch-storage=memory"
-        ]
     },
     // Cortex-debug plugin use ::1 ipv6 address so enable it 
     "runArgs": [
