@@ -68,6 +68,22 @@ The key points:
 * Run guiconfig. Now X server can be accessible. During container build the DISPLAY variable was set to host.docker.internal:0 value
 
 
+## Quick run (GitPod)
+
+* Make sure default IDE setting in GitPod user preferences set to VS Code
+* Click on "GitPod ready-to-code" button
+* Wait until workspace created and repository modules initialized
+* If "select a Kit for ada-project-example" shows choose "[Unspecified]"
+* Click the "Build" button on the status bar
+* Run Task by choose: Menu > Terminal > Run Task... > "Launch Renode and Connect UART" > Continue without scanning the task output
+* Wait until Renode simulator launch firmware and prints the shell prompt to the emulated UART console
+* You can type to the shell something like "kernel version"
+* Go to the "Run and Debug" tab and launch "Renode GDB" to debug
+* Configure Zephyr
+
+       $ west build -t menuconfig
+
+
 ## Flash and debug a development board
 
 ### Terms
