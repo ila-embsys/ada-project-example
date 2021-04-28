@@ -135,4 +135,7 @@ Note: It can increase compilation time up to six times. Also, some C macros and 
 ### Breakpoints on Ada code
 
 When debug is run on Renode, not possible to set a break point on Ada code. But it is possible to set by the GDB console.
+
+       > break ada_hello
+
 JLink works fine. Maybe the cause is the cortex-debug plugin variable 'servertype' set to 'external'.
