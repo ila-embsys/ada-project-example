@@ -139,3 +139,9 @@ When debug is run on Renode, not possible to set a break point on Ada code. But 
        > break ada_hello
 
 JLink works fine. Maybe the cause is the cortex-debug plugin variable 'servertype' set to 'external'.
+
+### GitPod can not run menuconfig from CMake targets explorer
+
+Use West command
+
+       $ west build -t menuconfig
