@@ -1,5 +1,12 @@
+
 image:
   file: .gitpod.Dockerfile
 
 tasks:
   - init: cmake .
+
+vscode:
+  extensions:
+    - marus25.cortex-debug
+    - adacore.ada
+    - llvm-vs-code-extensions.vscode-clangd
