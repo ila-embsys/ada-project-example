@@ -2,21 +2,6 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "GDB (Docker Host)",
-            "cwd": "${workspaceRoot}",
-            "executable": "${workspaceRoot}/build/zephyr/zephyr.elf",
-            "request": "launch",
-            "type": "cortex-debug",
-            "servertype": "external",
-            "gdbTarget": "host.docker.internal:3333",
-            "device": "STM32F429ZI",
-            "interface": "swd",
-            "showDevDebugOutput": false,
-            "runToMain": true,
-            "svdFile": "${workspaceRoot}/STM32F429.svd",
-            "toolchainPrefix": "arm-zephyr-eabi",
-        },
-        {
             "name": "Renode GDB (Local)",
             // "preLaunchTask": "Launch Renode and connect UART",
             "cwd": "${workspaceRoot}",
@@ -54,17 +39,19 @@
             "debuggerArgs": ["-iex", "set auto-load safe-path ."]
         },
         {
-            "name": "GDB Native (Docker Host)",
-            "type": "gdb",
-            "request": "launch",
+            "name": "GDB (Docker Host)",
             "cwd": "${workspaceRoot}",
-            "target": "${workspaceRoot}/build/zephyr/zephyr.elf",
-            "gdbpath": "${env:ZEPHYR_SDK_INSTALL_DIR}/arm-zephyr-eabi/bin/arm-zephyr-eabi-gdb",
-            "autorun": [
-                "target remote host.docker.internal:50000",
-                "file ${workspaceRoot}/build/zephyr/zephyr.elf",
-                "load"
-            ]
+            "executable": "${workspaceRoot}/build/zephyr/zephyr.elf",
+            "request": "launch",
+            "type": "cortex-debug",
+            "servertype": "external",
+            "gdbTarget": "host.docker.internal:3333",
+            "device": "STM32F429ZI",
+            "interface": "swd",
+            "showDevDebugOutput": false,
+            "runToMain": true,
+            "svdFile": "${workspaceRoot}/STM32F429.svd",
+            "toolchainPrefix": "arm-zephyr-eabi",
         },
         {
             "name": "GDB PyOCD (Local)",
@@ -82,6 +69,19 @@
             "toolchainPrefix": "arm-zephyr-eabi",
             "serverArgs": ["--uid=remote:host.docker.internal", "--target", "stm32f429zi"],
             "serverpath": "${workspaceRoot}/utils/pyocd-wrapper.py",
+        },
+        {
+            "name": "GDB Native (Docker Host)",
+            "type": "gdb",
+            "request": "launch",
+            "cwd": "${workspaceRoot}",
+            "target": "${workspaceRoot}/build/zephyr/zephyr.elf",
+            "gdbpath": "${env:ZEPHYR_SDK_INSTALL_DIR}/arm-zephyr-eabi/bin/arm-zephyr-eabi-gdb",
+            "autorun": [
+                "target remote host.docker.internal:50000",
+                "file ${workspaceRoot}/build/zephyr/zephyr.elf",
+                "load"
+            ]
         },
     ]
 }
