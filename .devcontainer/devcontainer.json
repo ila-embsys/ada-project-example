@@ -13,8 +13,9 @@
 		"cheshirekow.cmake-format",
 		"adacore.ada",
 		"twxs.cmake",
-        "trond-snekvik.kconfig-lang",
-        "trond-snekvik.devicetree"
+		"trond-snekvik.kconfig-lang",
+		"trond-snekvik.devicetree",
+		"vadimcn.vscode-lldb"
 	],
     "settings": {
         "terminal.integrated.shell.linux": "/bin/bash",
