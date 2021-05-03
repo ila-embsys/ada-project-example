@@ -9,11 +9,6 @@ extern "C" {
 
 void main()
 {
-    while (true) {
-        LOG_INF("Hello World!");
-        ada_hello();
-
-        k_cpu_idle();
-        k_sleep(K_MSEC(100));
-    }
+    LOG_INF("Start Ada execution!");
+    ada_hello();
 }
