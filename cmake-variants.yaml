@@ -15,7 +15,7 @@ app:
         KCONFIG_ROOT: KConfig
         # CMAKE_VERBOSE_MAKEFILE: ON
         # ZEPHYR_MODULES: <path-to-module1>[;<path-to-module2>[...]]
-        # EXTRA_CFLAGS: -fdump-ada-spec # -H
+        EXTRA_CFLAGS: -fdump-ada-spec # -H
       env:
         ADA: arm-zephyr-eabi-gcc
         ADAFLAGS: --RTS=${workspaceFolder}/modules/gnat -I${workspaceFolder}/build -gnat12
@@ -34,7 +34,7 @@ app:
         KCONFIG_ROOT: KConfig
         # CMAKE_VERBOSE_MAKEFILE: ON
         # ZEPHYR_MODULES: <path-to-module1>[;<path-to-module2>[...]]
-        # EXTRA_CFLAGS: -fdump-ada-spec # -H
+        EXTRA_CFLAGS: -fdump-ada-spec # -H
       env:
         ADA: arm-zephyr-eabi-gcc
         ADAFLAGS: --RTS=${workspaceFolder}/modules/gnat -I${workspaceFolder}/build -gnat12
