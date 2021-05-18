@@ -12,3 +12,4 @@ vscode:
     - llvm-vs-code-extensions.vscode-clangd
     - mhutchie.git-graph
     - vadimcn.vscode-lldb
+    - ibm.output-colorizer
