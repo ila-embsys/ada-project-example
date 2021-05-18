@@ -33,7 +33,7 @@ manifest:
 
     - name: zephyr-ada-gnat-rts
       remote: zephyr-ada
-      revision: b2593b5e84a46067784c3938091e72c7897b2556 
+      revision: 6c2abaeb413ef9603a2bedf4e0c047d4c8dd5b7c 
       path: modules/gnat
 
     - name: zephyr

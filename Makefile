@@ -10,13 +10,16 @@ endif
 
 PLATFORM_SPECIFIC_LOCS_ARG=-DKCONFIG_ROOT=KConfig -DOUT_OF_TREE_BOARD=OFF -DOUT_OF_TREE_SOC=OFF -DOUT_OF_TREE_DTS=OFF
 CONF_FILE ?= prj_uart_shell.conf
-# EXTRA_CFLAGS := -fdump-ada-spec
+EXTRA_CFLAGS := -fdump-ada-spec
 
 mkfile_path := $(abspath $(lastword $(MAKEFILE_LIST)))
 current_dir := $(patsubst %/,%,$(dir $(mkfile_path)))
 
-export ADA = arm-zephyr-eabi-gcc
-export ADAFLAGS = --RTS=$(current_dir)/modules/gnat -I/workspaces/ada-project-example/build -gnat12
+export ADA = arm-zephyr-eabi-g++
+export ADAFLAGS = --RTS=$(current_dir)/modules/gnat -I$(current_dir)/build -gnat12
+
+.PHONY : all
+all : zephyr-export init-repo build
 
 # See https://docs.zephyrproject.org/latest/guides/zephyr_cmake_package.html
 # Only for ver 2.2.99+
