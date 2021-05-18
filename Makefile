@@ -18,6 +18,9 @@ current_dir := $(patsubst %/,%,$(dir $(mkfile_path)))
 export ADA = arm-zephyr-eabi-g++
 export ADAFLAGS = --RTS=$(current_dir)/modules/gnat -I$(current_dir)/build -gnat12
 
+.PHONY : all
+all : zephyr-export init-repo build
+
 # See https://docs.zephyrproject.org/latest/guides/zephyr_cmake_package.html
 # Only for ver 2.2.99+
 .PHONY: zephyr-export
