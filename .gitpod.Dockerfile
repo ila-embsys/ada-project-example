@@ -7,5 +7,5 @@ FROM zephyrada/zephyr-sdk-ada-arm:v0.2.0-alpha
 # More information: https://www.gitpod.io/docs/config-docker/
 
 USER root
-RUN apt install gprbuild
+RUN apt update && apt install gprbuild
 USER gitpod
