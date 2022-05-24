@@ -8,4 +8,4 @@ FROM zephyrada/zephyr-sdk-ada-arm:v0.2.0-alpha
 
 USER root
 RUN apt-get update && apt-get install -y gprbuild
-USER gitpod
+USER $USERNAME
