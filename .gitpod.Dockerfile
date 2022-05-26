@@ -16,5 +16,12 @@ RUN apt-get update && apt-get install -y \
     && echo 'deb [signed-by=/usr/share/keyrings/kitware-archive-keyring.gpg] https://apt.kitware.com/ubuntu/ focal main' \
     | sudo tee /etc/apt/sources.list.d/kitware.list >/dev/null \
     && apt-get update && apt-get install -y cmake
+
+# restore ada modules
+RUN git clone https://github.com/zephyr-ada/cmake-ada.git && \
+    cd cmake-ada && \
+    cmake -P install.cmake && \
+    cd .. && \
+    rm -rf cmake-ada
     
 USER $USERNAME
