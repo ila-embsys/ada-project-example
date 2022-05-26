@@ -1,0 +1,59 @@
+{
+    "version": 3,
+    "cmakeMinimumRequired": {
+        "major": 3,
+        "minor": 22,
+        "patch": 1
+    },
+    "configurePresets": [
+        {
+            "name": "base-ada-config",
+            "hidden": true,
+            "environment": {
+                "ADA": "arm-zephyr-eabi-gcc",
+                "ADAFLAGS": "--RTS=${workspaceFolder}/modules/gnat -I${workspaceFolder}/build -gnat12",
+                "CC": "arm-zephyr-eabi-g++"
+            },
+            "cacheVariables": {
+                "EXTRA_CFLAGS": "-fdump-ada-spec"
+            }
+        },
+        {
+            "name": "base-app-config",
+            "hidden": true,
+            "generator": "Ninja",
+            "binaryDir": "${sourceDir}/build/${presetName}",
+            "cacheVariables": {
+                "BOARD": "stm32f429i_disc1",
+                "OUT_OF_TREE_BOARD": "OFF"
+            }
+        },
+        {
+            "name": "ada-rtt",
+            "inherits": [
+                "base-app-config",
+                "base-ada-config"
+            ],
+            "displayName": "RTT shell",
+            "description": "Zephyr project configuration with RTT shell",
+            "cacheVariables": {
+                "CONF_FILE": "prj_rtt_shell.conf"
+            }
+        },
+        {
+            "name": "ada-uart",
+            "inherits": [
+                "base-app-config",
+                "base-ada-config"
+            ],
+            "displayName": "UART shell",
+            "description": "Zephyr project configuration with UART shell",
+            "cacheVariables": {
+                "CONF_FILE": "prj_rtt_shell.conf"
+            }
+        }
+    ],
+    "buildPresets": [],
+    "testPresets": [],
+    "vendor": {}
+}
