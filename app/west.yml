@@ -13,7 +13,7 @@ manifest:
   projects:
     - name: Zephyr-CMake-Helpers
       remote: thirdpin
-      revision: 4af0125dfa16f3305b7a5fbeaec62aca622c7af7
+      revision: v.1.2.0
       path: modules/zephyr-cmake-helpers
 
     - name: cmsis
