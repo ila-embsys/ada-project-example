@@ -7,7 +7,7 @@ logLevel 1 sysbus.uart1
 emulation CreateUartPtyTerminal "term" "/tmp/renode_uart" True
 connector Connect sysbus.uart1 term
 
-$bin?=@build/zephyr/zephyr.elf
+$bin?=@build/ada-uart/zephyr/zephyr.elf
 
 # logFile @/tmp/renode_log_${RUNTEST}.txt
 
