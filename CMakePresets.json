@@ -49,7 +49,7 @@
             "displayName": "UART shell",
             "description": "Zephyr project configuration with UART shell",
             "cacheVariables": {
-                "CONF_FILE": "prj_rtt_shell.conf"
+                "CONF_FILE": "prj_uart_shell.conf"
             }
         }
     ],
