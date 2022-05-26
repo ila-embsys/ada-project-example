@@ -74,6 +74,7 @@ The key points:
 * Click on "GitPod ready-to-code" button
 * Wait until workspace created and repository modules initialized
 * If "select a Kit for ada-project-example" shows choose "[Unspecified]"
+* Choose UART-shell configuration preset by clicking the button neath the "Build" on status bar. 
 * Click the "Build" button on the status bar
 * Run Task by choose: Menu > Terminal > Run Task... > "Launch Renode and Connect UART" > Continue without scanning the task output
 * Wait until Renode simulator launch firmware and prints the shell prompt to the emulated UART console
