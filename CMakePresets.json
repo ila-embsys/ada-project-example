@@ -11,7 +11,7 @@
             "hidden": true,
             "environment": {
                 "ADA": "arm-zephyr-eabi-gcc",
-                "ADAFLAGS": "--RTS=${workspaceFolder}/modules/gnat -I${workspaceFolder}/build -gnat12",
+                "ADAFLAGS": "--RTS=${workspaceFolder}/modules/gnat -I${workspaceFolder}/build/${presetName} -gnat12",
                 "CC": "arm-zephyr-eabi-g++"
             },
             "cacheVariables": {
