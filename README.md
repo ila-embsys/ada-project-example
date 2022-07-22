@@ -12,6 +12,45 @@ The key points:
 * The minimal working piece of Ada GNAT library is implemented as Zephyr module. Ada.Text_IO is done partially to print hello world only.
 * VS Code's tasks are added for easy firmware run on Renode emulator and attaching to shell.
 
+## Table of Contents
+
+<!-- TOC -->
+
+- [Zephyr RTOS based ADA application project example](#zephyr-rtos-based-ada-application-project-example)
+    - [Table of Contents](#table-of-contents)
+    - [Quick run GitPod](#quick-run-gitpod)
+    - [Quick run console](#quick-run-console)
+    - [Quick run VS Code](#quick-run-vs-code)
+        - [guiconfig on Windows](#guiconfig-on-windows)
+    - [Flash and debug a development board](#flash-and-debug-a-development-board)
+        - [Terms](#terms)
+        - [Concept](#concept)
+        - [JLink](#jlink)
+    - [Project configuration](#project-configuration)
+    - [Ada bindings to Zephyr](#ada-bindings-to-zephyr)
+    - [Known Issues](#known-issues)
+        - [Breakpoints on Ada code](#breakpoints-on-ada-code)
+        - [GitPod can not run menuconfig from CMake targets explorer](#gitpod-can-not-run-menuconfig-from-cmake-targets-explorer)
+
+<!-- /TOC -->
+
+
+## Quick run (GitPod)
+
+* Make sure default IDE setting in GitPod user preferences set to VS Code
+* Click on "GitPod ready-to-code" button
+* Wait until workspace created and repository modules initialized
+* If "Select a configure preset for ada-project-example" shows choose "UART shell"
+* Click the "Build" button on the status bar
+* Run Task by choose: Menu > Terminal > Run Task... > "Launch Renode and Connect UART" > Continue without scanning the task output
+* Wait until Renode simulator launch firmware and prints the shell prompt to the emulated UART console
+* You can type to the shell something like "kernel version"
+* Go to the "Run and Debug" tab and launch "Renode GDB" to debug
+* Configure Zephyr in a new Bash terminal
+
+       $ west build -t menuconfig
+
+
 ## Quick run (console)
 
  * Update modules declared in West manifest file
@@ -66,23 +105,6 @@ The key points:
 * Install VcXsrv on Windows Host system.
 * Run it with all default parameters.
 * Run guiconfig. Now X server can be accessible. During container build the DISPLAY variable was set to host.docker.internal:0 value
-
-
-## Quick run (GitPod)
-
-* Make sure default IDE setting in GitPod user preferences set to VS Code
-* Click on "GitPod ready-to-code" button
-* Wait until workspace created and repository modules initialized
-* If "select a Kit for ada-project-example" shows choose "[Unspecified]"
-* Choose UART-shell configuration preset by clicking the button neath the "Build" on status bar. 
-* Click the "Build" button on the status bar
-* Run Task by choose: Menu > Terminal > Run Task... > "Launch Renode and Connect UART" > Continue without scanning the task output
-* Wait until Renode simulator launch firmware and prints the shell prompt to the emulated UART console
-* You can type to the shell something like "kernel version"
-* Go to the "Run and Debug" tab and launch "Renode GDB" to debug
-* Configure Zephyr
-
-       $ west build -t menuconfig
 
 
 ## Flash and debug a development board
