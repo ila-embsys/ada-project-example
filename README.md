@@ -13,19 +13,27 @@ The key points:
 * VS Code's tasks are added for easy firmware run on Renode emulator and attaching to shell.
 
 ## Table of Contents
-  * [Quick run (GitPod)](#quick-run--gitpod-)
-  * [Quick run (console)](#quick-run--console-)
-  * [Quick run (VS Code)](#quick-run--vs-code-)
-    + [guiconfig on Windows](#guiconfig-on-windows)
-  * [Flash and debug a development board](#flash-and-debug-a-development-board)
-    + [Terms](#terms)
-    + [Concept](#concept)
-    + [JLink](#jlink)
-  * [Project configuration](#project-configuration)
-  * [Ada bindings to Zephyr](#ada-bindings-to-zephyr)
-  * [Known Issues](#known-issues)
-    + [Breakpoints on Ada code](#breakpoints-on-ada-code)
-    + [GitPod can not run menuconfig from CMake targets explorer](#gitpod-can-not-run-menuconfig-from-cmake-targets-explorer)
+
+<!-- TOC -->
+
+- [Zephyr RTOS based ADA application project example](#zephyr-rtos-based-ada-application-project-example)
+    - [Table of Contents](#table-of-contents)
+    - [Quick run GitPod](#quick-run-gitpod)
+    - [Quick run console](#quick-run-console)
+    - [Quick run VS Code](#quick-run-vs-code)
+        - [guiconfig on Windows](#guiconfig-on-windows)
+    - [Quick run GitPod](#quick-run-gitpod)
+    - [Flash and debug a development board](#flash-and-debug-a-development-board)
+        - [Terms](#terms)
+        - [Concept](#concept)
+        - [JLink](#jlink)
+    - [Project configuration](#project-configuration)
+    - [Ada bindings to Zephyr](#ada-bindings-to-zephyr)
+    - [Known Issues](#known-issues)
+        - [Breakpoints on Ada code](#breakpoints-on-ada-code)
+        - [GitPod can not run menuconfig from CMake targets explorer](#gitpod-can-not-run-menuconfig-from-cmake-targets-explorer)
+
+<!-- /TOC -->
 
 
 ## Quick run (GitPod)
