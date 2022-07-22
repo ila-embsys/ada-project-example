@@ -8,5 +8,4 @@ target_sources(
     PRIVATE
         src/main.cpp
         src/hello.adb
-        src/put_time.adb
 )

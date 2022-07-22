@@ -10,7 +10,8 @@
         "--cross-file-rename",
         "--clang-tidy",
         "--background-index",
-        "--query-driver=/opt/zephyr-sdk/arm-zephyr-eabi/bin/arm-zephyr-eabi-*",
+        "--query-driver=/usr/bin/arm-zephyr-eabi-*",
         "--pch-storage=memory"
-    ]
+    ],
+    "ada.projectFile": "app/app.gpr"
 }

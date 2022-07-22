@@ -13,22 +13,22 @@ manifest:
   projects:
     - name: Zephyr-CMake-Helpers
       remote: thirdpin
-      revision: v.1.2.0
+      revision: v.1.2.1
       path: modules/zephyr-cmake-helpers
 
     - name: cmsis
       remote: upstream
-      revision: 542b2296e6d515b265e25c6b7208e8fea3014f90
+      revision: 5f86244bad4ad5a590e084f0e72ba7a1416c2edf
       path: modules/hal/cmsis
 
     - name: hal_stm32
       remote: upstream
-      revision: d1bc80d021f4ebc31f6e8b36f14b738cc26c7b03
+      revision: c87358a3e9b99e0f8f18816f1a74777fe80d1ab6
       path: modules/hal/stm32
 
     - name: segger
       remote: upstream
-      revision: 874d9e9696b00c09f9eeefe839028dc25fe44983
+      revision: 3a52ab222133193802d3c3b4d21730b9b1f1d2f6
       path: modules/debug/segger
 
     - name: zephyr-ada-gnat-rts
@@ -38,7 +38,7 @@ manifest:
 
     - name: zephyr
       remote: zephyr-ada
-      revision: v2.4-ada-branch
+      revision: v3.1.0-ada-branch
       path: zephyr
       west-commands: scripts/west-commands.yml
 

@@ -12,12 +12,16 @@
             "gdbTarget": "localhost:3333",
             "device": "STM32F429ZI",
             "interface": "swd",
-            "showDevDebugOutput": false,
-            "runToMain": true,
+            "showDevDebugOutput": "none",
+            "runToEntryPoint": "main",
             "svdFile": "${workspaceRoot}/STM32F429.svd",
             "toolchainPrefix": "arm-zephyr-eabi",
-            "postDebugTask": "Kill Renode",
-            // "overrideRestartCommands": [],
+            "overrideRestartCommands": [
+                "monitor machine Reset"
+            ],
+            "postLaunchCommands": [
+                "monitor machine Reset"
+            ],
         },
         {
             "name": "J-Link GDB (Docker Host)",
@@ -32,8 +36,8 @@
             // host.docker.internal
             "ipAddress": "192.168.65.2",
             "serialNumber": null,
-            "showDevDebugOutput": false,
-            "runToMain": true,
+            "showDevDebugOutput": "none",
+            "runToEntryPoint": "main",
             "svdFile": "${workspaceRoot}/STM32F429.svd",
             "toolchainPrefix": "arm-zephyr-eabi",
             "debuggerArgs": ["-iex", "set auto-load safe-path ."]
@@ -48,8 +52,8 @@
             "gdbTarget": "host.docker.internal:3333",
             "device": "STM32F429ZI",
             "interface": "swd",
-            "showDevDebugOutput": false,
-            "runToMain": true,
+            "showDevDebugOutput": "none",
+            "runToEntryPoint": "main",
             "svdFile": "${workspaceRoot}/STM32F429.svd",
             "toolchainPrefix": "arm-zephyr-eabi",
         },
@@ -63,8 +67,8 @@
             // "gdbTarget": "host.docker.internal:3333",
             "device": "STM32F429ZI",
             "interface": "swd",
-            "showDevDebugOutput": false,
-            "runToMain": true,
+            "showDevDebugOutput": "none",
+            "runToEntryPoint": "main",
             "svdFile": "${workspaceRoot}/STM32F429.svd",
             "toolchainPrefix": "arm-zephyr-eabi",
             "serverArgs": ["--uid=remote:host.docker.internal", "--target", "stm32f429zi"],
