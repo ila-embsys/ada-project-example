@@ -3,9 +3,9 @@ using sysbus
 mach create
 machine LoadPlatformDescription @platforms/cpus/stm32f429.repl
 
-logLevel 1 sysbus.uart1
+logLevel 1 sysbus.usart1
 emulation CreateUartPtyTerminal "term" "/tmp/renode_uart" True
-connector Connect sysbus.uart1 term
+connector Connect sysbus.usart1 term
 
 $bin?=@build/zephyr/zephyr.elf
 

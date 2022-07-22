@@ -1,4 +1,10 @@
-build/
+build/*
+# clangd argument `--compile-commands-dir=build`
+# will cause of failing of clangd initialization
+# because of error
+# `Path specified by --compile-commands-dir does not exist. The argument will be ignored.`
+# so, keep it in a tree
+!build/.gitkeep
 
 # Submodules
 /zephyr
