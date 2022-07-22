@@ -13,3 +13,6 @@ vscode:
     - mhutchie.git-graph
     - vadimcn.vscode-lldb
     - ibm.output-colorizer
+    - huntertran.auto-markdown-toc
+    - cheshirekow.cmake-format
+    - xaver.clang-format
