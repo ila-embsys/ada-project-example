@@ -1,7 +1,7 @@
 // See https://aka.ms/vscode-remote/devcontainer.json for format details.
 {
     "name": "Zephyr SDK ADA ARM",
-    "image": "ghcr.io/ila-embsys/ada-project-example:master"
+    "image": "ghcr.io/ila-embsys/ada-project-example:master",
     // "dockerFile": "../.gitpod.Dockerfile",
     // Add the IDs of any extensions you want installed in the array below.
     "extensions": [
