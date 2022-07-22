@@ -115,6 +115,14 @@ RUN wget https://github.com/renode/renode/releases/download/v${RENODE_VERSION}/r
     rm -rf /var/lib/apt/lists/*
 RUN pip3 install -r /opt/renode/tests/requirements.txt --no-cache-dir
 
+# Set locales
+RUN apt-get update \
+    && DEBIAN_FRONTEND=noninteractive apt-get install -y locales \
+    && rm -rf /var/lib/apt/lists/* \
+    && localedef -i en_US -c -f UTF-8 -A /usr/share/locale/locale.alias en_US.UTF-8
+
+ENV LANG en_US.UTF-8
+
 # set arg value to env to be visible on child images
 ENV USERNAME=$USERNAME
 USER $USERNAME
