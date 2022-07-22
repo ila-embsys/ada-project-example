@@ -15,7 +15,8 @@
 		"twxs.cmake",
 		"trond-snekvik.kconfig-lang",
 		"trond-snekvik.devicetree",
-		"vadimcn.vscode-lldb"
+		"vadimcn.vscode-lldb",
+        "huntertran.auto-markdown-toc"
 	],
     "settings": {
         "terminal.integrated.defaultProfile.linux": "bash",
