@@ -22,7 +22,6 @@ The key points:
     - [Quick run console](#quick-run-console)
     - [Quick run VS Code](#quick-run-vs-code)
         - [guiconfig on Windows](#guiconfig-on-windows)
-    - [Quick run GitPod](#quick-run-gitpod)
     - [Flash and debug a development board](#flash-and-debug-a-development-board)
         - [Terms](#terms)
         - [Concept](#concept)
@@ -41,13 +40,13 @@ The key points:
 * Make sure default IDE setting in GitPod user preferences set to VS Code
 * Click on "GitPod ready-to-code" button
 * Wait until workspace created and repository modules initialized
-* If "select a Kit for ada-project-example" shows choose "[Unspecified]"
+* If "Select a configure preset for ada-project-example" shows choose "UART shell"
 * Click the "Build" button on the status bar
 * Run Task by choose: Menu > Terminal > Run Task... > "Launch Renode and Connect UART" > Continue without scanning the task output
 * Wait until Renode simulator launch firmware and prints the shell prompt to the emulated UART console
 * You can type to the shell something like "kernel version"
 * Go to the "Run and Debug" tab and launch "Renode GDB" to debug
-* Configure Zephyr
+* Configure Zephyr in a new Bash terminal
 
        $ west build -t menuconfig
 
@@ -106,23 +105,6 @@ The key points:
 * Install VcXsrv on Windows Host system.
 * Run it with all default parameters.
 * Run guiconfig. Now X server can be accessible. During container build the DISPLAY variable was set to host.docker.internal:0 value
-
-
-## Quick run (GitPod)
-
-* Make sure default IDE setting in GitPod user preferences set to VS Code
-* Click on "GitPod ready-to-code" button
-* Wait until workspace created and repository modules initialized
-* If "select a Kit for ada-project-example" shows choose "[Unspecified]"
-* Choose UART-shell configuration preset by clicking the button neath the "Build" on status bar. 
-* Click the "Build" button on the status bar
-* Run Task by choose: Menu > Terminal > Run Task... > "Launch Renode and Connect UART" > Continue without scanning the task output
-* Wait until Renode simulator launch firmware and prints the shell prompt to the emulated UART console
-* You can type to the shell something like "kernel version"
-* Go to the "Run and Debug" tab and launch "Renode GDB" to debug
-* Configure Zephyr
-
-       $ west build -t menuconfig
 
 
 ## Flash and debug a development board
