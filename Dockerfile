@@ -47,32 +47,14 @@ RUN apt-get update && \
     DEBIAN_FRONTEND=noninteractive \
     apt-get install -y \
         arm-zephyr-eabi \
-        cmake-ada
+        cmake-ada \
+        gprconfig-kb-gnat-zephyr 
 
 # fix cmake_module paths
 RUN cd /opt/zephyr-sdk/cmake/zephyr \
     && cp target.cmake target.cmake.bak \
     && sed -i -e 's@set(SYSROOT_DIR   ${TOOLCHAIN_HOME}/${SYSROOT_TARGET}/${SYSROOT_TARGET})@set(SYSROOT_DIR   ${TOOLCHAIN_HOME}/${SYSROOT_TARGET})@' target.cmake \
     && sed -i -e 's@set(CROSS_COMPILE ${TOOLCHAIN_HOME}/${CROSS_COMPILE_TARGET}/bin/${CROSS_COMPILE_TARGET}-)@set(CROSS_COMPILE ${TOOLCHAIN_HOME}/bin/${CROSS_COMPILE_TARGET}-)@' target.cmake
-
-SHELL ["/bin/bash", "-c"]
-
-# add compiler description for gprconfig
-RUN echo $'<?xml version="1.0" ?>\n\
-<gprconfig>\n\
-  <compiler_description>\n\
-    <name>GCC-ZEPHYR</name>\n\
-    <executable prefix="1">(.*-zephyr.*-)gnatbind</executable>\n\
-    <version>\n\
-      <external>${PREFIX}gnatbind -v --version</external>\n\
-      <grep regexp="^GNATBIND.+?(\d+(\.\d+){1,2})" group="1"></grep>\n\
-    </version>\n\
-    <languages>Ada</languages>\n\
-    <target>\n\
-      <external>${PREFIX}gcc -dumpmachine</external>\n\
-    </target>\n\
-  </compiler_description>\n\
-</gprconfig>' > /usr/share/gprconfig/compilers-zephyr.xml
 
 # create user
 ARG USERNAME=developer
