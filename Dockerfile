@@ -90,7 +90,7 @@ ENV PATH="/opt/SEGGER/JLink:${PATH}"
 ARG RENODE_VERSION=1.13.0
 
 # Install Renode
-RUN wget https://github.com/renode/renode/releases/download/v${RENODE_VERSION}/renode_${RENODE_VERSION}_amd64.deb && \
+RUN wget --progress=dot:giga https://github.com/renode/renode/releases/download/v${RENODE_VERSION}/renode_${RENODE_VERSION}_amd64.deb && \
     apt-get update && \
     apt-get install -y --no-install-recommends ./renode_${RENODE_VERSION}_amd64.deb python3-dev && \
     rm ./renode_${RENODE_VERSION}_amd64.deb && \
