@@ -28,10 +28,10 @@
             }
         }
     },
-    // Cortex-debug plugin use ::1 ipv6 address so enable it 
     "runArgs": [
-        "--sysctl",
-        "net.ipv6.conf.all.disable_ipv6=0",
+        // Cortex-debug plugin use ::1 ipv6 address so enable it 
+        // "--sysctl",
+        // "net.ipv6.conf.all.disable_ipv6=0",
         // "-e", "DISPLAY=${localEnv:DISPLAY}",
         "-e", "DISPLAY=:0",
         "-v", "/tmp/.X11-unix:/tmp/.X11-unix"
