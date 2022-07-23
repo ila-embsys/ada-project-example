@@ -51,6 +51,13 @@ RUN apt-get update && \
         gprconfig-kb-gnat-zephyr 
 
 # fix cmake_module paths
+#
+# original Zephyr SDK installs toolchains in
+# /opt/zephyr-sdk/<arch>-zephyr-<abi>/
+# but Zephyr Ada's toolchain installs to
+# /opt/zephyr-sdk/
+#
+# so fix paths here until something other be done
 RUN cd /opt/zephyr-sdk/cmake/zephyr \
     && cp target.cmake target.cmake.bak \
     && sed -i -e 's@set(SYSROOT_DIR   ${TOOLCHAIN_HOME}/${SYSROOT_TARGET}/${SYSROOT_TARGET})@set(SYSROOT_DIR   ${TOOLCHAIN_HOME}/${SYSROOT_TARGET})@' target.cmake \
