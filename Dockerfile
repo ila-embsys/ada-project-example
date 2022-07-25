@@ -50,19 +50,6 @@ RUN apt-get update && \
         cmake-ada \
         gprconfig-kb-gnat-zephyr 
 
-# fix cmake_module paths
-#
-# original Zephyr SDK installs toolchains in
-# /opt/zephyr-sdk/<arch>-zephyr-<abi>/
-# but Zephyr Ada's toolchain installs to
-# /opt/zephyr-sdk/
-#
-# so fix paths here until something other be done
-RUN cd /opt/zephyr-sdk/cmake/zephyr \
-    && cp target.cmake target.cmake.bak \
-    && sed -i -e 's@set(SYSROOT_DIR   ${TOOLCHAIN_HOME}/${SYSROOT_TARGET}/${SYSROOT_TARGET})@set(SYSROOT_DIR   ${TOOLCHAIN_HOME}/${SYSROOT_TARGET})@' target.cmake \
-    && sed -i -e 's@set(CROSS_COMPILE ${TOOLCHAIN_HOME}/${CROSS_COMPILE_TARGET}/bin/${CROSS_COMPILE_TARGET}-)@set(CROSS_COMPILE ${TOOLCHAIN_HOME}/bin/${CROSS_COMPILE_TARGET}-)@' target.cmake
-
 # create user
 ARG USERNAME=developer
 ARG USER_UID=1000
